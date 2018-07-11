@@ -266,3 +266,41 @@ void solution8() {
     printf("Число: %d, квадрат: %d, куб: %d\n",a,a*a,a*a*a);
 
 }
+
+void solution9() {
+//    9. Даны целые положительные числа N и K. Используя только операции сложения и вычитания, найти
+//    частное от деления нацело N на K, а также остаток от этого деления.
+
+    int N = 0;
+    int K = 0;
+
+    int mod = 0;
+    int quot = 0;
+
+    while (N<=0) {
+        printf("Введите N: \n");
+        scanf("%d", &N);
+    }
+
+    while (K<=0) {
+        printf("Введите K: \n");
+        scanf("%d", &K);
+    }
+
+    if (N<K) {
+        quot = 0;
+        mod = N;
+    } else if (N==K) {
+        quot = 1;
+    } else {
+        while(N>=K) {
+            quot += 1;
+            N -= K;
+        }
+        mod = N;
+    }
+
+    printf("Частное: %d\n", quot);
+    printf("Остаток от деления: %d\n", mod);
+
+}
