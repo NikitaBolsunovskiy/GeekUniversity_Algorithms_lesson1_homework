@@ -11,6 +11,7 @@ void solution7();
 void solution8();
 void solution9();
 void solution10();
+void solution11();
 
 int main() {
 
@@ -24,7 +25,8 @@ int main() {
     //solution7();
     //solution8();
     //solution9();
-    solution10();
+    //solution10();
+    solution11();
 
     return 0;
 }
@@ -331,4 +333,29 @@ void solution10(){
         }
     }
     printf("False\n");
+}
+
+void solution11(){
+    double a = 0;
+
+    double sum = 0;
+    int i = 0;
+
+    do{
+        printf("Введите число: \n");
+        scanf("%lf",&a);
+
+        if (a ==0) {
+            break;
+        } else {
+            sum+=a;
+            i++;
+        }
+
+    } while(1);
+
+    if (i > 1) {
+        printf("Среднее арифметическое: %lf",sum/i);
+    }
+
 }
