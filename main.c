@@ -10,6 +10,7 @@ void solution6();
 void solution7();
 void solution8();
 void solution9();
+void solution10();
 
 int main() {
 
@@ -22,7 +23,8 @@ int main() {
     //solution6();
     //solution7();
     //solution8();
-    solution9();
+    //solution9();
+    solution10();
 
     return 0;
 }
@@ -303,4 +305,30 @@ void solution9() {
     printf("Частное: %d\n", quot);
     printf("Остаток от деления: %d\n", mod);
 
+}
+
+void solution10(){
+
+//    10. Дано целое число N (> 0). С помощью операций деления нацело и взятия остатка от деления
+//    определить, имеются ли в записи числа N нечетные цифры. Если имеются, то вывести True, если нет
+//    — вывести False.
+
+    int N = 0;
+
+    int res = 0;
+
+    while (N<=0) {
+        printf("Введите N: \n");
+        scanf("%d", &N);
+    }
+
+    while (N>0) {
+        res = N%10;
+        N/=10;
+        if (res%2 == 1) {
+            printf("True\n");
+            return;
+        }
+    }
+    printf("False\n");
 }
