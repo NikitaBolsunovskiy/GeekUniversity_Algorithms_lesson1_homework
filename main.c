@@ -12,6 +12,8 @@ void solution8();
 void solution9();
 void solution10();
 void solution11();
+void solution12();
+double maxOfThree(double a,double b,double c);
 
 int main() {
 
@@ -26,7 +28,8 @@ int main() {
     //solution8();
     //solution9();
     //solution10();
-    solution11();
+    //solution11();
+    solution12();
 
     return 0;
 }
@@ -358,4 +361,36 @@ void solution11(){
         printf("Среднее арифметическое: %lf",sum/i);
     }
 
+}
+
+void solution12() {
+//    12. Написать функцию нахождения максимального из трех чисел.
+
+    double a = 10;
+    double b = -5;
+    double c = 7;
+
+    double max;
+
+    max = maxOfThree(a,b,c);
+
+    printf("%lf",max);
+
+}
+
+double maxOfThree(double a, double b, double c){
+
+    if(a>=b) {
+        if (a>=c){
+            return a;
+        } else {
+            return c;
+        }
+    } else {
+        if (b>=c){
+            return b;
+        } else {
+            return c;
+        }
+    }
 }
