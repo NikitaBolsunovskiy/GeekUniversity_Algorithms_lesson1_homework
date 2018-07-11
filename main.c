@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
+
 void solution1();
 void solution2();
 void solution3a();
@@ -14,6 +17,11 @@ void solution10();
 void solution11();
 void solution12();
 double maxOfThree(double a,double b,double c);
+void solution13();
+int Random_1();
+int Random_2();
+void solution14();
+void allAutoMorph(int N);
 
 int main() {
 
@@ -29,7 +37,9 @@ int main() {
     //solution9();
     //solution10();
     //solution11();
-    solution12();
+    //solution12();
+    //solution13();
+    solution14();
 
     return 0;
 }
@@ -391,6 +401,55 @@ double maxOfThree(double a, double b, double c){
             return b;
         } else {
             return c;
+        }
+    }
+}
+
+void solution13(){
+
+//    13. * Написать функцию, генерирующую случайное число от 1 до 100.
+//    с использованием стандартной функции rand()
+//    без использования стандартной функции rand()
+
+    srand(time(NULL));
+    for(int i = 0; i<10;i++) {
+        int rnd = Random_1();
+        printf("%d   ",rnd);
+    }
+    printf("\n");
+    int rnd2 = 1;
+    for(int i = 0; i<10;i++) {
+        rnd2 = (rnd2*2 + 3)%100 + 1;
+        printf("%d   ",rnd2);
+    }
+
+}
+
+int Random_1(){
+    return rand()%100+1;
+}
+
+void solution14(){
+    int N = 10000;
+    allAutoMorph(N);
+}
+
+void allAutoMorph(int N){
+
+
+    for (int i = 1; i<N; i++) {
+        int counter = 0;
+        int M = i;
+
+        while (M != 0) {
+            M/=10;
+            counter += 1;
+        }
+
+        int mod = pow(10,counter);
+
+        if ((int)pow(i,2)%mod==i){
+            printf("%d\n",i);
         }
     }
 }
